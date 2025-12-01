@@ -218,7 +218,7 @@
   /* ---------- Initialize based on body data-page ---------- */
   document.addEventListener('DOMContentLoaded', function(){
     const page = document.body.getAttribute('data-page');
-    if(page === 'main') initMain();
+    if(page === 'index') initMain();
     if(page === 'food') initFood();
     if(page === 'cart') initCart();
 
@@ -234,5 +234,6 @@
   });
 
 })();
+
 
 

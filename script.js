@@ -124,7 +124,7 @@
 
     btnBack.addEventListener('click', function(e){
       e.preventDefault();
-      location.href = 'main.html';
+      location.href = 'index.html';
     });
 
     btnAdd.addEventListener('click', function(){
@@ -227,10 +227,11 @@
     const links = document.querySelectorAll('.nav-links a');
     links.forEach(a => {
       const href = a.getAttribute('href') || '';
-      if(href === loc || (loc === '' && href === 'main.html')){
+      if(href === loc || (loc === '' && href === 'index.html')){
         a.classList.add('active');
       }
     });
   });
 
 })();
+

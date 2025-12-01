@@ -1,0 +1,161 @@
+/* style.css - Minimalist putih-hijau, responsive */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root{
+  --dark-green: #1B5E20;
+  --accent: #76d66f;
+  --accent-2: #A5D6A7;
+  --bg: #ffffff;
+  --muted: #6b6b6b;
+  --card-shadow: 0 6px 18px rgba(27,94,32,0.06);
+  --radius: 12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#111;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+  padding-bottom:40px;
+}
+
+/* Navbar */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:18px 22px;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  background:var(--bg);
+  z-index:50;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:600;
+  color:var(--dark-green);
+  text-decoration:none;
+}
+.brand .logo{
+  width:40px;height:40px;border-radius:8px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-weight:700;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+}
+.nav-links{display:flex;gap:12px;align-items:center}
+.nav-links a{
+  color:var(--dark-green);
+  text-decoration:none;
+  padding:8px 10px;border-radius:8px;font-weight:500;
+}
+.nav-links a.active{
+  background:var(--accent-2);color:var(--dark-green);
+}
+
+/* Container */
+.container{
+  max-width:1100px;
+  margin:22px auto;
+  padding:0 18px;
+}
+
+/* Controls (search + filters) */
+.controls{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  margin-bottom:18px;
+  flex-wrap:wrap;
+}
+.search{
+  flex:1;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  background:#f7fff7;
+  border:1px solid #e6f4ea;
+  padding:8px 10px;border-radius:10px;
+  box-shadow:var(--card-shadow);
+}
+.search input{
+  border:0;outline:none;background:transparent;font-size:15px;width:100%;
+}
+.filters{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.filter-group{
+  display:flex;gap:8px;align-items:center;background:#fff;border-radius:10px;padding:8px;border:1px solid #f0f0f0;
+  box-shadow:var(--card-shadow);
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+}
+.card{
+  background:white;border-radius:12px;padding:12px;border:1px solid #f0f0f0;
+  box-shadow:var(--card-shadow);
+  display:flex;flex-direction:column;gap:12px;
+}
+.card img{
+  width:100%;height:160px;object-fit:cover;border-radius:10px;
+}
+.card h3{margin:0;font-size:16px}
+.meta{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
+.price{font-weight:700;color:var(--dark-green)}
+.card .actions{display:flex;gap:8px;align-items:center}
+.btn{
+  padding:8px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:600;
+}
+.btn-outline{background:transparent;border:1px solid var(--dark-green);color:var(--dark-green)}
+.btn-primary{background:var(--dark-green);color:white}
+.small{font-size:13px;padding:6px 10px}
+
+/* Detail page layout */
+.detail{
+  display:flex;
+  gap:24px;
+  align-items:flex-start;
+  margin-top:16px;
+}
+.detail .left{flex:1}
+.detail .right{width:360px;min-width:260px}
+.detail img{width:100%;height:360px;object-fit:cover;border-radius:12px;}
+
+/* Cart table */
+.table{width:100%;border-collapse:collapse;margin-top:12px}
+.table th, .table td{padding:12px;border-bottom:1px solid #f2f2f2;text-align:left}
+.table th{color:var(--muted);font-weight:600;font-size:14px}
+
+/* Footer area for totals */
+.cart-footer{
+  display:flex;justify-content:space-between;align-items:center;margin-top:18px;
+  gap:12px;flex-wrap:wrap;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .detail{flex-direction:column}
+  .detail .right{width:100%}
+}
+@media (max-width:600px){
+  .grid{grid-template-columns:1fr}
+  .controls{flex-direction:column;align-items:stretch}
+  .navbar{padding:12px}
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AgriConnect — Detail Produk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="food">
+  <header class="navbar">
+    <a class="brand" href="main.html">
+      <div class="logo">A</div>
+      <div>AgriConnect</div>
+    </a>
+    <nav class="nav-links">
+      <a href="main.html">Home</a>
+      <a href="keranjang.html">Keranjang</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="detail">
+      <div class="left">
+        <img id="productImage" src="img/placeholder.jpg" alt="Gambar produk">
+      </div>
+      <div class="right">
+        <h2 id="productName">Nama Produk</h2>
+        <p id="productFarmer" style="color:var(--muted);margin-top:6px">Petani: —</p>
+        <p id="productPrice" style="font-size:18px;margin-top:8px;font-weight:700;color:var(--dark-green)">Rp 0</p>
+
+        <div style="margin-top:18px;display:flex;gap:8px;align-items:center">
+          <label style="min-width:120px;font-weight:600">Jumlah (kg)</label>
+          <input id="inputKg" type="number" min="1" step="0.1" value="1" style="padding:10px;border-radius:8px;border:1px solid #eaeaea;width:140px">
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:10px">
+          <button id="btnAdd" class="btn btn-primary">Tambah ke Keranjang</button>
+          <button id="btnBack" class="btn btn-outline">Kembali</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
